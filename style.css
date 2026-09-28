@@ -1,0 +1,134 @@
+
+/* Variaveis Globais (cores e fontes reutilizadas no CSS)*/
+
+:root{
+    --color-primary:#FFF6F4; /* cor principal */
+    --color-primary-dark: #e952a2; /* versao escura */
+    --color-text: #1C1C1C; /* cor do texto principal */
+    --color-text-light: #000000; /* cor do texto segundario */
+    --color-border: #000000; /* cor da borda */
+    --color-bg: #FFF; /* cor do fundo */
+    --font-main: 'Poppins', sans-serif; /* fonte */
+}
+/* Reset Básico: remove espacamentos padrao do navegador  */
+
+*{
+    margin:0; /* espacamento externo */
+    padding:0;/* espacamento interno */
+    box-sizing: border-box; /* padding e border nao aumentam o tamanho do elemento  */
+}
+
+body {
+    font-family: var(--font-main); /* fonte do site aplicada */
+    
+}
+
+/* HEADER */
+.header {
+    width:100% ;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);/* Borda inferior */
+    position: sticky; /* header "gruda"  no topo ao rola a pagina */
+    top: 0;
+    z-index: 100;/* garante que fique acima dos outros elementos */
+}
+
+.header-container {
+    max-width: 1200px; /* Largura maxima do conteudo */
+    margin: 0 auto; /* Centraliza na pagina  */
+    padding: 16px 24px;
+    display: flex; /* organiza os elementos lado a lado  */
+    align-items: center; /* centraliza verticamente  */
+    justify-content: space-between; /* logo, menu e botoes ficam nas pontas  */
+    gap: 24px; /* espaco entre os elementos  */
+
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none; /* tira a linha do texto  */
+}
+
+.logo img {
+    width: 60px;
+    object-fit: contain; /* mantem a proporcao da imagem  */
+
+}
+
+
+/* NAVEGACAO (menu) */
+
+.main-nav {
+    display: flex;
+    align-items: center; /*Centaliza os links verticalmente */
+    gap: 32px; /* Espaco entre os links */
+}
+
+.nav-link{
+    text-decoration: none; /*remove a estilizacao padrao links*/
+    font: 12px;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: color 0.2s ease; /*Muda a cor suavemente, quando passa e cima */
+}
+
+.nav-link:hover {
+    color: #e952a2; /*Mudar a cor fortao quando passa em cima */
+}
+
+.nav-link.active{
+    color: var(--color-primary-dark);/* Destaca o link da pagina atual*/
+    font-weight: 500;
+}
+
+/*Acoes  header (buscar + botoes)*/
+.header-actions{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-box{
+    position: relative;/* serve para possicionar o icone da lupa */
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    font-family: var(--font-main);
+    width: 220px;
+    padding: 10px 40px 10px 16px; /* espaco extra a direita  para caber o lupa */
+    border: 1px solid var(--color-border);   
+    border-radius: 8px; 
+    font-size: 14px;
+    outline: none; /* remove borda azul padrao do navegador */
+
+}
+.search-box input:focus{
+    border-color: var(--color-primary);
+}
+.search-box input::placeholder{
+    color: var(--color-text-light);
+}
+.search-icon{
+    position: absolute;/* posiciona o icon sobre o input*/
+    right: 14px;
+    fill: var(--color-primary-dark);/*cor do icone svg*/
+    pointer-events: none; /* Impede o icone de atrapalhar o clique n input */
+
+}
+.btn-primary{
+    font-family: var(--font-main);
+    background-color:#FFF ;
+    color: #000000;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 8px 6px;
+    width: 140px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;/* mostra que e clicavel*/
+}
